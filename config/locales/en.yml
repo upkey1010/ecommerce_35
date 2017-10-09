@@ -30,5 +30,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  application_name: "Tms70"
+  hello_world: "Hello World"
+  base_title: "Apple Store - Heaven Place for ifan"
+  cant_find_user: "Can not find user !!!"
+  sign_up: "Sign up"
+  home: "Home"
+  help: "Help"
+  log_in: "Log in"
+  contact: "Contact"
+  about: "About"
+  error: "error"
+
+  static_pages:
+    home:
+      sign_up_announcement: "Sign up now!"
+      welcome: "Welcome to Apple Store"
+
+  users:
+    new:
+      create: "Create my account"
+    create:
+      sign_up_success: "Sign up success"
+    show:
+      phone_num: "Phone number:"
+      email: "Email:"
+      address: "Address:"
+
+  shared:
+    error_messages:
+      message_no1: "The form contains "

@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.1.4"
+gem "carrierwave", "1.1.0"
+gem "mini_magick", "4.7.0"
+gem "fog", "1.40.0"
+gem "bootstrap-sass", "3.3.7"
+gem "bcrypt", "3.1.11"
+gem "config"
 gem "mysql2", ">= 0.3.18", "< 0.5"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
