@@ -7,3 +7,6 @@ user:
     minimum_length: 6
   address:
     maximum_length: 255
+
+checkbox:
+  true: "1"

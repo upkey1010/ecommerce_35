@@ -48,7 +48,7 @@ en:
   users: "Users"
   login_error_msg: "Invalid email/password combination"
   account: "Account"
-
+  remember_me: "Remember me !"
 
   static_pages:
     home:
