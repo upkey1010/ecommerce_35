@@ -37,9 +37,18 @@ en:
   home: "Home"
   help: "Help"
   log_in: "Log in"
+  log_out: "Log out"
   contact: "Contact"
   about: "About"
   error: "error"
+  signup_now: "Sign up now"
+  new_user: "New user?"
+  profile: "Profile"
+  settings: "Settings"
+  users: "Users"
+  login_error_msg: "Invalid email/password combination"
+  account: "Account"
+
 
   static_pages:
     home:
