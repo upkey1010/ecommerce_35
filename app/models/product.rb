@@ -5,4 +5,5 @@ class Product < ApplicationRecord
   has_many :comments
 
   scope :sort_by_name, ->{order :name}
+  scope :search_by_name, -> (content){where(" name like ?", "%#{content}%" )}
 end

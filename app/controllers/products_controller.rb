@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     else
       Product.sort_by_name
     end
+    @products = @products.search_by_name(params[:search])
   end
 
   def load_category
@@ -21,4 +22,5 @@ class ProductsController < ApplicationController
       render file: "public/404.html"
     end
   end
+
 end
