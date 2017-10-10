@@ -49,7 +49,10 @@ en:
   login_error_msg: "Invalid email/password combination"
   account: "Account"
   remember_me: "Remember me !"
-
+  iphone: "Iphone"
+  ipad: "Ipad"
+  watch: "Watch"
+  admin: "Admin"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -68,3 +71,25 @@ en:
   shared:
     error_messages:
       message_no1: "The form contains "
+  products:
+    index:
+      category: "Category"
+      iphone: "Iphone"
+      ip5: "Iphone 5 "
+      ip5s: "Iphone 5s "
+      ip6: "Iphone 6 "
+      ip6s: "Iphone 6s "
+      ip7: "Iphone 7 "
+      ipad: "Ipad"
+      ipad-pro: "Ipad Pro"
+      ipad2: "Ipad 2 Air"
+      ipad3: "Ipad 3"
+      ipad4: "Ipad 4"
+      watch: "Watch"
+      range: "Price Range"
+      left: "$ 0"
+      right: "$ 600"
+      product: "Products"
+    product:
+      add-cart: "Add to cart"
+      view-detail: "View Detail"
