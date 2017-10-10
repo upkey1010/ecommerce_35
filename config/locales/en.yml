@@ -90,6 +90,7 @@ en:
       left: "$ 0"
       right: "$ 600"
       product: "Products"
+      search: "Search"
     product:
       add-cart: "Add to cart"
       view-detail: "View Detail"
