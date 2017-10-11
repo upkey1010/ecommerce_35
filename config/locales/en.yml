@@ -53,6 +53,13 @@ en:
   ipad: "Ipad"
   watch: "Watch"
   admin: "Admin"
+  update_success: "Profile updated"
+  please_login: "Please log in."
+  admin_require: "Requires administrator permissions !"
+  user_deleted: "User deleteds"
+  pic_size_warn: "should be less than 5MB"
+  all_user: "All User"
+
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -67,7 +74,21 @@ en:
       phone_num: "Phone number:"
       email: "Email:"
       address: "Address:"
-
+      update_profile: "Update your profile"
+    edit:
+      edit_user: "Edit User"
+      save: "Save"
+      update_profile: "Update your profile"
+      upload_avatar: "Update Avatar"
+    index:
+      name: "Name"
+      email: "Email"
+      address: "Address"
+      phone: "Phone"
+      action: "Action"
+    destroy:
+      destroy_success: "User is deleted!"
+      destroy_fail: "User is not deleted!"
   shared:
     error_messages:
       message_no1: "The form contains "

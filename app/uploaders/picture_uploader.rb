@@ -21,6 +21,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  def default_url(*)
+    ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.jpg"].compact.join("_"))
+  end
+
   # Process files as they are uploaded:
   # process scale: [200, 300]
   #
@@ -38,6 +42,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   # def extension_whitelist
   #   %w(jpg jpeg gif png)
   # end
+
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

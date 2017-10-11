@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :user_suggestions
   has_many :viewed_product_by_users
 
+  mount_uploader :picture, PictureUploader
+
   before_save {self.email = email.downcase}
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -18,7 +20,9 @@ class User < ApplicationRecord
   validates :phone, presence: true, format: {with: VALID_PHONE_REGEX}, uniqueness: {case_sensitive: false}
   validates :address, presence: true, length: {maximum: Settings.user.address.maximum_length}
   has_secure_password
-  validates :password, presence: true, length: {minimum: Settings.user.password.minimum_length}
+  validates :password, presence: true, length: {minimum: Settings.user.password.minimum_length}, allow_nil: true
+
+  scope :alphabet_name, ->{order :name}
 
   class << self
     def digest string
@@ -43,5 +47,11 @@ class User < ApplicationRecord
   def authenticated? remember_token
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  private
+
+  def picture_size
+    errors.add(:picture, t("pic_size_warn")) if picture.size > Settings.picture.maximum_size.megabytes
   end
 end
