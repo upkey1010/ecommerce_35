@@ -4,9 +4,6 @@ class ProductsController < ApplicationController
   def new; end
 
   def index
-    # @products = Product.sort_by_name
-    # return if params[:category].nil?
-    # @products = @category.products
     @products = if @category
       @category.products
     else
@@ -22,5 +19,4 @@ class ProductsController < ApplicationController
       render file: "public/404.html"
     end
   end
-
 end
