@@ -6,4 +6,5 @@ class Product < ApplicationRecord
 
   scope :sort_by_name, ->{order :name}
   scope :search_by_name, ->(content){where(" name like ?", "%#{content}%")}
+  scope :search_by_price, ->(prices){where(price: prices) if prices.present?}
 end
