@@ -59,7 +59,13 @@ en:
   user_deleted: "User deleteds"
   pic_size_warn: "should be less than 5MB"
   all_user: "All User"
-
+  all: "all"
+  price_all: "All Products"
+  price_below_one: "Below 1 milion"
+  price_one_to_three: "From 1 - 3 milions"
+  price_three_to_six: "From 3 - 6 milions"
+  price_six_to_ten: "From 6 - 10 milions"
+  price_above: "Above 10 milions"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -115,3 +121,4 @@ en:
     product:
       add-cart: "Add to cart"
       view-detail: "View Detail"
+
