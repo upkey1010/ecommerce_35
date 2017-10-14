@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :user_suggestions
   has_many :viewed_product_by_users
 
-  mount_uploader :picture, PictureUploader
+  mount_uploader :picture, AvatarUploader
 
   before_save {self.email = email.downcase}
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum_length}

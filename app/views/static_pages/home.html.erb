@@ -1,5 +1,16 @@
-<div class="center jumbotron">
-  <h1><%= t ".welcome" %></h1>
+<section>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+          <%= render "layouts/left_sidebar" %>
+        </div>
+        <div class="col-sm-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center"><%= t ".product" %></h2>
+            <%= render @products %>
+          </div><!--features_items-->
+        </div>
+      </div>
+  </div>
+</section>
 
-  <%= link_to t(".sign_up_announcement"), signup_path, class: "btn btn-lg btn-primary" %>
-</div>

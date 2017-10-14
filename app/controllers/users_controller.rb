@@ -62,5 +62,4 @@ class UsersController < ApplicationController
     load_user
     redirect_to root_url unless current_user? @user
   end
-
 end
