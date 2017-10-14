@@ -80,6 +80,17 @@ en:
   category: "Category"
   choose_cate: "Choose a category"
   update_para: "Update Parameters"
+  all_comments: "All Comments"
+  reviews: "All Reviews"
+  advertisement: "Advertisement"
+  ago: "ago"
+  delete: "delete"
+  confirm: "You sure?"
+  post: "Post"
+  write_comment: "Write a comment"
+  created: "Created"
+  not_created: "was not created"
+  not_deleted: "was not deleted"
 
   static_pages:
     home:
@@ -158,6 +169,7 @@ en:
       cpu: "CPU: "
       add_to_cart: "Add to cart"
       quantity: "Quantity: "
+      ago: "ago"
     new:
       add_product: "Add Product"
     create:
@@ -171,3 +183,8 @@ en:
       add_success: "Added !"
     new:
       add: "Add parameter"
+
+  comments:
+    create:
+      comment_created: "Your comment was posted"
+      comment_not_created: "Something was wrong! Unalble to post comment"

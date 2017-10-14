@@ -5,13 +5,17 @@
         <%= show_image_for product %>
         <h2><%= product.price%></h2>
         <p><%= product.name %></p>
-        <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
+        <% if product.active? && product.quantity != 0 %>
+          <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
+        <% end %>
       </div>
       <div class="product-overlay">
         <div class="overlay-content">
           <h2><%= product.price%></h2>
           <p><%= product.name %></p>
-          <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
+          <% if product.active? && product.quantity != 0 %>
+            <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
+          <% end %>
         </div>
       </div>
     </div>
