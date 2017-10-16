@@ -24,9 +24,10 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update_attributes user_params
+    update_helper
+    if @user.update_attributes @update_params
       flash[:success] = t "update_success"
-      redirect_to @user
+      redirect_to @after_update_path
     else
       render :edit
     end
@@ -58,8 +59,24 @@ class UsersController < ApplicationController
     params.require(:user).permit :name, :email, :address, :phone, :password, :password_confirmation, :picture
   end
 
+  def admin_params
+    params.require(:user).permit :name, :email, :address, :phone,
+      :password, :password_confirmation, :picture, :admin
+  end
+
   def correct_user
     load_user
-    redirect_to root_url unless current_user? @user
+    return if current_user? @user
+    redirect_to root_url unless current_user.admin
+  end
+
+  def update_helper
+    if current_user.admin?
+      @update_params = admin_params
+      @after_update_path = users_path
+    else
+      @update_params = user_params
+      @after_update_path = @user
+    end
   end
 end
