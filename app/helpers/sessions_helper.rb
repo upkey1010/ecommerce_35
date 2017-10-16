@@ -1,6 +1,7 @@
 module SessionsHelper
   def log_in user
     session[:user_id] = user.id
+    set_cart_id
   end
 
   def current_user
@@ -27,6 +28,7 @@ module SessionsHelper
     forget current_user
     session.delete :user_id
     @current_user = nil
+    session[:cart_id] = nil
   end
 
   def remember user
@@ -48,5 +50,10 @@ module SessionsHelper
 
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def set_cart_id
+    @cart = current_user.orders.find_by order_statuses_id: Settings.order_status_id
+    session[:cart_id] = @cart.id if @cart.present?
   end
 end

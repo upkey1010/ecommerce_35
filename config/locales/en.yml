@@ -92,8 +92,12 @@ en:
   not_created: "was not created"
   not_deleted: "was not deleted"
   delete_confirm_msg: "Are you sure to delete this user?"
+  can_not_delete_cart: "can not delete cart"
+  can_not_add_cart: "can not to add cart"
+  not_found_product: "not found product"
 
-
+  pls_login: "Please Login !"
+  error_destroy_product: "This product has a LineItem"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -190,3 +194,16 @@ en:
     create:
       comment_created: "Your comment was posted"
       comment_not_created: "Something was wrong! Unalble to post comment"
+  carts:
+    cart_row:
+      submit: "Update Quantity"
+      delete: "Delete"
+      sure: "Are you sure ?"
+      cart_unit: "Unit Price:"
+      total_cart: "Total Price:"
+    shopping_cart:
+      go_back: "go back"
+      cnt1: "There are no items in your shopping cart.  Please"
+      cnt2: " and add some items to your cart."
+      checkout: "Checkout"
+

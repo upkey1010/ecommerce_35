@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   mount_uploader :picture, AvatarUploader
 
-  before_save {self.email = email.downcase}
+  before_save{self.email = email.downcase}
   validates :name, presence: true, length: {maximum: Settings.user.name.maximum_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: Settings.user.email.maximum_length},
