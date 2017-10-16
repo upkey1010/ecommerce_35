@@ -26,8 +26,6 @@ class ProductsController < ApplicationController
     redirect_to products_manager_path
   end
 
-  def showl; end
-
   def edit; end
 
   def update
@@ -39,6 +37,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def show
+    @comments = @product.comments.sort_by_time.paginate(page: params[:page],
+      per_page: Settings.paginate.comment_perpage)
+    @comment = current_user.comments.build if logged_in?
+  end
+
   def index
     @products = if @category
       @category.products
@@ -48,10 +52,6 @@ class ProductsController < ApplicationController
   end
 
   private
-
-  def load_all_category
-    @category = Category.all
-  end
 
   def load_product
     @product = Product.find_by id: params[:id]

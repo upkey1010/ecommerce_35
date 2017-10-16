@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "admin_require"
     redirect_to(root_url)
   end
+
+  def load_all_category
+    @category = Category.all
+  end
 end

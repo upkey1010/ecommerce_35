@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     resources :parameters, except: %i(index show)
   end
   resources :categories
+  resources :comments, only: %i(create destroy)
 end
