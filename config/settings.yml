@@ -8,6 +8,10 @@ user:
   address:
     maximum_length: 255
 
+product:
+  name:
+    maximum_length: 100
+
 paginate:
   user_perpage: 50
 

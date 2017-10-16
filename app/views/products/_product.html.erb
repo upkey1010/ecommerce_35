@@ -2,24 +2,22 @@
   <div class="product-image-wrapper">
     <div class="single-products">
       <div class="productinfo text-center">
+        <%= show_image_for product %>
         <h2><%= product.price%></h2>
         <p><%= product.name %></p>
-        <a href="#" class="btn btn-default add-to-cart"><%= %></a>
         <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
-        <i class="glyphicon glyphicon-shopping-cart"></i>
       </div>
       <div class="product-overlay">
         <div class="overlay-content">
           <h2><%= product.price%></h2>
           <p><%= product.name %></p>
           <%= link_to t(".add-cart"),"#", class: "btn btn-default add-to-cart"%>
-          <i class="glyphicon glyphicon-shopping-cart"></i>
         </div>
       </div>
     </div>
     <div class="choose">
       <ul class="nav nav-pills nav-justified">
-        <li><a href="#"><i class="fa fa-plus-square"></i><%= t".view-detail"%></a></li>
+        <li></i><%= link_to (t".view-detail"), product %></a></li>
       </ul>
     </div>
   </div>

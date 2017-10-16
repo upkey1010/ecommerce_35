@@ -10,15 +10,6 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
-      <div class="mainmenu pull-left">
-        <ul class="nav navbar-nav collapse navbar-collapse">
-          <li><a href="/products" class="active"><%= t "home" %></a></li>
-          <li><a href="/products/iphone"><%= t "iphone" %></a></li>
-          <li><a href="/products/ipad"><%= t "ipad" %></a></li>
-          <li><a href="/products/watch"><%= t "watch" %></a></li>
-        </ul>
-      </div>
-      </div>
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
