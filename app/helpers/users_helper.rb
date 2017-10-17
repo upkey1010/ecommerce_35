@@ -4,6 +4,6 @@ module UsersHelper
   end
 
   def displayed_user_column_names
-    User.column_names - %w(id created_at updated_at password_digest remember_digest admin picture) + %w(action)
+    User.column_names - %w(id created_at updated_at password_digest remember_digest admin picture) + %w(action admin?)
   end
 end

@@ -91,6 +91,8 @@ en:
   created: "Created"
   not_created: "was not created"
   not_deleted: "was not deleted"
+  delete_confirm_msg: "Are you sure to delete this user?"
+
 
   static_pages:
     home:
