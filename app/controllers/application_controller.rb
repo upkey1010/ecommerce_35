@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :current_cart
+
   include SessionsHelper
   include ProductsHelper
   include CategoriesHelper
@@ -19,5 +21,11 @@ class ApplicationController < ActionController::Base
 
   def load_all_category
     @category = Category.all
+  end
+
+  def current_cart
+    @cart = Order.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+      @cart = Order.new
   end
 end

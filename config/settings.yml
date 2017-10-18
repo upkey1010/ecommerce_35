@@ -33,3 +33,4 @@ controllers:
 picture:
   maximun_size: 5
   accepted_file: "image/jpeg,image/gif,image/png"
+order_status_id: 1

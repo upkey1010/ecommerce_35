@@ -303,3 +303,38 @@ span.picture {
     border: 0;
   }
 }
+
+.update-cart {
+  margin-top: 1px !important;
+}
+
+.picture-product {
+  height: 87px;
+  width: 14%;
+}
+
+.row-cart {
+  padding: 15px !important;
+  margin-bottom: 5px !important;
+}
+
+.subtotal-cart {
+    font-size: 1.8em;
+    color: #f70000;
+    float: right;
+    clear: both;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout-button {
+  clear: both;
+  float: right;
+  background: #298618 !important;
+  font-size: 1.5em !important;
+}
+
+.bottom-cart {
+  display: block;
+  height: 92px;
+}

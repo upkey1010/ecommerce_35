@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "static_pages#home"
 
   get "static_pages/home"
@@ -16,4 +17,6 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :comments, only: %i(create destroy)
+  resource :cart, only: [:show]
+  resources :order_details, only: %i(create update destroy)
 end
