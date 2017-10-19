@@ -16,7 +16,7 @@
     <%= render "carts/cart_row", product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
 <div class="bottom-cart">
-  <h2 class="subtotal-cart">Subtotal: <%= "#{number_to_currency @cart.subtotal}" %></h2>
-  <button class="btn btn-primary checkout-button"><%= t".checkout" %></button>
+  <h2 class="subtotal-cart"><% t ".subtotal" %><%= "#{number_to_currency @cart.subtotal}" %></h2>
+  <%= link_to t(".checkout"), checkouts_path, class: "btn btn-primary checkout-button"  %>
 </div>
 <% end %>

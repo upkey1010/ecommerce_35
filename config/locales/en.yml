@@ -55,7 +55,7 @@ en:
   watch: "Watch"
   admin: "Admin"
   update_success: "Profile updated"
-  please_login: "Please log in."
+  please_login: "Please log in !"
   admin_require: "Requires administrator permissions !"
   user_deleted: "User deleteds"
   pic_size_warn: "should be less than 5MB"
@@ -95,9 +95,10 @@ en:
   can_not_delete_cart: "can not delete cart"
   can_not_add_cart: "can not to add cart"
   not_found_product: "not found product"
-
   pls_login: "Please Login !"
   error_destroy_product: "This product has a LineItem"
+  order_success: "Order Success"
+  order_erorr: "Order Errors"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -206,4 +207,9 @@ en:
       cnt1: "There are no items in your shopping cart.  Please"
       cnt2: " and add some items to your cart."
       checkout: "Checkout"
+      subtotal: "Subtotal: "
+  checkouts:
+    index:
+      create_order: "Create Order"
+      shopper_information: "Shopper Information"
 

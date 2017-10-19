@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
   def current_cart
     @cart = Order.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound
-      @cart = Order.new
+      if current_user.present?
+        @cart = current_user.orders.new
+      else
+        @cart = Order.new
+      end
   end
 end

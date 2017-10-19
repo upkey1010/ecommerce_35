@@ -21,12 +21,12 @@
                 <h2><%= number_with_delimiter(@product.price, delimiter: " ") %> $</h2>
                 <span>
                   <label><%= t ".quantity" %><%= @product.quantity %></label>
-                  <input type="text" value="3" />
-                  <% if @product.active? && @product.quantity != 0 %>
-                    <button type="button" class="btn btn-fefault cart">
-                      <i class="glyphicon glyphicon-shopping-cart"></i>
-                      <%= t ".add_to_cart" %>
-                    </button>
+                  <%= form_tag "/order_details", remote: true do |f| %>
+                    <%= number_field_tag :quantity, 1, class: "form-control number_cart", min: 1 %>
+                    <%= hidden_field_tag :product_id, @product.id %>
+                    <% if @product.quantity != 0 %>
+                      <%= submit_tag t(".add_to_cart"), class: "btn btn-fefault cart" %>
+                    <% end %>
                   <% end %>
                 </span>
                 <p><b><%= t ".vailability" %></b> <%= display_availability_for @product %></p>
