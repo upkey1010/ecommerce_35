@@ -4,8 +4,8 @@ class OrderDetailsController < ApplicationController
   def create
     if current_user.present?
       @order_item = @cart.add_product(order_item_params)
-      if !@cart.save
-        flash.now[:danger] = t "can_not_add_cart"
+      unless @cart.save
+        flash[:danger] = t "can_not_add_cart"
         redirect_to root_url
       end
       session[:cart_id] = @cart.id
@@ -39,6 +39,10 @@ class OrderDetailsController < ApplicationController
   private
 
   def order_item_params
-    params.require(:order_detail).permit(:quantity, :product_id)
+    if params[:order_detail].present?
+      params.require(:order_detail).permit(:quantity, :product_id)
+    else
+      {quantity: params[:quantity], product_id: params[:product_id]}
+    end
   end
 end

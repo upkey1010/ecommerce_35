@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017023725) do
+ActiveRecord::Schema.define(version: 20171019042558) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171017023725) do
     t.datetime "updated_at", null: false
     t.bigint "order_statuses_id"
     t.string "subtotal"
+    t.string "email"
     t.index ["order_statuses_id"], name: "index_orders_on_order_statuses_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
