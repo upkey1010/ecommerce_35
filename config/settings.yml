@@ -11,6 +11,7 @@ user:
 product:
   name:
     maximum_length: 100
+  limit: 6
 
 paginate:
   user_perpage: 50
