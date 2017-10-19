@@ -9,7 +9,8 @@ class CheckoutsController < ApplicationController
 
   def create
     if update_cart order_params
-      flash[:success] = t "order_success"
+      UserNotifierMailer.send_order_email(current_user, @cart).deliver_now
+      flash[:success] = t "order_success_pls_check_mail"
       session[:cart_id] = nil
     else
       flash[:danger] = t "order_error"

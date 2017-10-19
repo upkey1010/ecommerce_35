@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     redirect_to order_path
   end
 
-private
+  private
 
   def load_order
     @order = Order.find_by id: params[:id]
