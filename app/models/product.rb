@@ -21,7 +21,8 @@ class Product < ApplicationRecord
   scope :search_by_cate, ->(category_id){where category_id: category_id}
   scope :hot_trend, ->{joins(:order_details)
     .where("order_details.created_at >= DATE_FORMAT( CURRENT_DATE - INTERVAL 1 MONTH, '%Y/%m/01' )")
-    .group("id").order("sum(order_details.quantity) DESC").limit(Settings.product.limit) }
+    .group("id").order("sum(order_details.quantity) DESC").limit(Settings.product.limit)}
+  scope :get_lastest_product, ->(number){order(created_at: :desc).limit(number)}
 
   private
 

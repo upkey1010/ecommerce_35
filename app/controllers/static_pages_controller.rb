@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
   before_action :admin_user, only: %i(products_manager)
 
   def home
-    @products = Product.hot_trend
+    @hot_products = Product.hot_trend
+    @products = Product.get_lastest_product Settings.product.lastest_product
     @categories = Category.all
   end
 

@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020172432) do
+ActiveRecord::Schema.define(version: 20171022042052) do
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
     t.bigint "user_id"
     t.bigint "product_id"
@@ -28,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171020172432) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "order_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "quantity"
     t.integer "current_price"
     t.bigint "product_id"
@@ -40,20 +41,29 @@ ActiveRecord::Schema.define(version: 20171020172432) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "order_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "date"
     t.string "phone"
     t.text "address"
     t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "order_statuses_id"
     t.string "subtotal"
     t.string "email"
     t.integer "status"
+    t.index ["order_statuses_id"], name: "index_orders_on_order_statuses_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "parameters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "parameters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "screen"
     t.string "os"
     t.string "camera_front"
@@ -67,7 +77,7 @@ ActiveRecord::Schema.define(version: 20171020172432) do
     t.index ["product_id"], name: "index_parameters_on_product_id"
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "price"
     t.integer "quantity"
@@ -79,7 +89,7 @@ ActiveRecord::Schema.define(version: 20171020172432) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
-  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
     t.integer "score"
     t.bigint "user_id"
@@ -97,7 +107,7 @@ ActiveRecord::Schema.define(version: 20171020172432) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
     t.text "address"
@@ -124,6 +134,7 @@ ActiveRecord::Schema.define(version: 20171020172432) do
   add_foreign_key "comments", "users"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
+  add_foreign_key "orders", "order_statuses", column: "order_statuses_id"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "ratings", "users"

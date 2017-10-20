@@ -13,6 +13,7 @@ product:
     maximum_length: 100
   limit: 6
   than: 0
+  lastest_product: 6
 
 paginate:
   user_perpage: 50
@@ -20,6 +21,14 @@ paginate:
 
 checkbox:
   true: "1"
+
+comment:
+  max_length: 200
+  min_length: 10
+
+rating:
+  max_length: 200
+  min_length: 10
 
 controllers:
   products:

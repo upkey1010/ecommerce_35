@@ -87,7 +87,8 @@ en:
   delete: "delete"
   confirm: "You sure?"
   post: "Post"
-  write_comment: "Write a comment"
+  write_comment: "Write a comment... (more than 10 characters)"
+  write_review: "Write a review... (more than 10 characters)"
   created: "Created"
   not_created: "was not created"
   not_deleted: "was not deleted"
@@ -95,6 +96,7 @@ en:
   can_not_delete_cart: "can not delete cart"
   can_not_add_cart: "can not to add cart"
   not_found_product: "Not found product"
+  not_found_hot_product: "Hot trend product can not be found!"
   pls_login: "Please Login !"
   error_destroy_product: "This product has a LineItem"
   order_success: "Order Success"
@@ -108,10 +110,15 @@ en:
   update_quantity_errors: "Update quantity product errors"
   thanks_mailer: "Thanks for order for App Store"
   in_progress: "in_progress"
+  product_average: "Average user rating"
+  cant_find_review: "Review can not be found"
+
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
       welcome: "Welcome to Apple Store"
+      hot_trend: "Hottrend Products"
+      lastest_products: "Lastest products"
     products_manager:
       id: "ID"
       image: "Images"
@@ -186,6 +193,7 @@ en:
       add_to_cart: "Add to cart"
       quantity: "Quantity: "
       ago: "ago"
+      no_rating: "No rating"
     new:
       add_product: "Add Product"
     create:
@@ -202,8 +210,14 @@ en:
 
   comments:
     create:
-      comment_created: "Your comment was posted"
-      comment_not_created: "Something was wrong! Unalble to post comment"
+      comment_created: "Your comment has been posted"
+      comment_not_created: "Something was wrong! Unalble to post your reviews"
+
+  ratings:
+    create:
+      rating_created: "Your reviews has been posted"
+      rating_not_created: "Something was wrong! Unalble to post your reviews"
+
   carts:
     cart_row:
       submit: "Update Quantity"
