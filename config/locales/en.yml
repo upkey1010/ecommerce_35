@@ -85,7 +85,7 @@ en:
   advertisement: "Advertisement"
   ago: "ago"
   delete: "delete"
-  confirm: "You sure?"
+  confirm_msg: "Are you sure?"
   post: "Post"
   write_comment: "Write a comment... (more than 10 characters)"
   write_review: "Write a review... (more than 10 characters)"
@@ -114,6 +114,19 @@ en:
   import: "Import Products"
   imported: "Imported"
   import_errors: "Can not import! Unknown file"
+  product_average: "Average user rating"
+  user_form_name: "Name *"
+  user_form_phone: "Phone *"
+  user_form_email: "Email *"
+  user_form_address: "Address *"
+  user_form_password: "Password *"
+  user_form_password_confirmation: "Password Confirmation *"
+  cate_manager: "Categories Manager"
+  cant_find_category: "Category can not be found"
+  create: "Create"
+  this_is_super_category: "This is a super category"
+  super_cate: "Super Category"
+
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -130,6 +143,12 @@ en:
       cate: "Category"
       action: "Actions"
       add_product: "Add Products"
+    categories_manager:
+      id: "ID"
+      name: "Name"
+      parent_cate: "Parent Category"
+      action: "Actions"
+      add_cate: "Add Category"
 
   users:
     new:
@@ -153,7 +172,7 @@ en:
       phone: "Phone"
       action: "Action"
     destroy:
-      destroy_success: "Deleted!!"
+      destroy_success: "Delete process is completed"
       destroy_fail: "Delete process is not completed!"
   shared:
     error_messages:
@@ -281,3 +300,13 @@ en:
       import_products: "Import Product"
       import: "Import"
 
+  categories:
+    new:
+      add_cate: "Add Category"
+      create: "Crate Category"
+    destroy:
+      destroy_success: "Category has been destroyed"
+      destroy_fail: "Delete process is not completed!"
+      destroy_fail_because_of_sub: "This Category has sub-category, can not be destroyed"
+    create:
+      add_success: "Category has been added"

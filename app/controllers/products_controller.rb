@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   before_action :load_all_category, only: %i(new edit show)
   before_action :load_rating, only: :show
   before_action :load_comment, only: :show
+  before_action :check_if_has_line_item, only: :destroy
 
   def new
     @product = Product.new
@@ -56,6 +57,12 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def check_if_has_line_item
+    return if @product.order_details.empty?
+    flash[:danger] = t ".destroy_fail"
+    redirect_to products_manager_path
+  end
 
   def load_rating
     @rating = current_user.ratings.build if logged_in?

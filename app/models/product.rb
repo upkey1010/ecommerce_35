@@ -7,8 +7,6 @@ class Product < ApplicationRecord
 
   mount_uploader :picture, PictureUploader
 
-  before_destroy :check_if_has_line_item
-
   validates :name, presence: true, length: {maximum: Settings.product.name.maximum_length}
   validates :price, presence: true
   validates :quantity, presence: true,
