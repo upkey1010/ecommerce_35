@@ -30,8 +30,30 @@ class Product < ApplicationRecord
     if order_details.empty?
       true
     else
-      errors.add(:base, t("error_destroy_product"))
+      errors.add(:base, Settings.error_destroy_product)
       false
+    end
+  end
+
+  def self.import file
+    spreadsheet = open_spreadsheet file
+    if spreadsheet == Settings.unknown_file
+      spreadsheet
+    else
+      header = spreadsheet.row(Settings.product_row)
+      (Settings.product_start..spreadsheet.last_row).each do |i|
+        row = Hash[[header, spreadsheet.row(i)].transpose]
+        product = find_or_initialize_by(name: row["name"])
+        product.update_attributes(row.to_hash)
+      end
+    end
+  end
+
+  def self.open_spreadsheet file
+    case File.extname(file.original_filename)
+    when ".csv" then Roo::CSV.new(file.path, file_warning: :ignore)
+    when ".xlsx" then Roo::Excelx.new(file.path, file_warning: :ignore)
+    else Settings.unknown_file
     end
   end
 end

@@ -98,7 +98,6 @@ en:
   not_found_product: "Not found product"
   not_found_hot_product: "Hot trend product can not be found!"
   pls_login: "Please Login !"
-  error_destroy_product: "This product has a LineItem"
   order_success: "Order Success"
   order_success_pls_check_mail: "Order Success, Please Check Email !"
   order_erorr: "Order Errors"
@@ -112,7 +111,9 @@ en:
   in_progress: "in_progress"
   product_average: "Average user rating"
   cant_find_review: "Review can not be found"
-
+  import: "Import Products"
+  imported: "Imported"
+  import_errors: "Can not import! Unknown file"
   static_pages:
     home:
       sign_up_announcement: "Sign up now!"
@@ -275,4 +276,8 @@ en:
       address: "Address"
       love: "Love"
       app_store: "App Store"
+  imports:
+    index:
+      import_products: "Import Product"
+      import: "Import"
 
