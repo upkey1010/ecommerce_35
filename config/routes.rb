@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "static_pages/about"
   get "static_pages/contact"
   get "/products_manager", to: "static_pages#products_manager"
+  get "/categories_manager", to: "static_pages#categories_manager"
   get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

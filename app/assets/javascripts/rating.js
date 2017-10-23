@@ -113,7 +113,7 @@ $( document ).ready(function() {
      $(this).closest('.evaluation').children('#meaning').html(correspondence[value]);
 
      var currentval=  $(this).closest('.evaluation').children('#count').html();
-     $('.rating_val').val(currentval);
+     $('.ratingVal').val(currentval);
 
     var target=  $(this).closest('.evaluation').children('.indicators');
     target.css("color","black");
