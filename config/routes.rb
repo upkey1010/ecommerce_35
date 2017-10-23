@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   resources :checkouts, only: %i(index create)
   resources :my_orders, only: [:index]
   resources :orders, only: %i(show update)
+  resources :imports, only: %i(index create)
 end
