@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022042052) do
+ActiveRecord::Schema.define(version: 20171030061454) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -41,25 +41,17 @@ ActiveRecord::Schema.define(version: 20171022042052) do
     t.index ["product_id"], name: "index_order_details_on_product_id"
   end
 
-  create_table "order_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "date"
+    t.integer "status"
     t.string "phone"
     t.text "address"
     t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_statuses_id"
     t.string "subtotal"
     t.string "email"
-    t.integer "status"
-    t.index ["order_statuses_id"], name: "index_orders_on_order_statuses_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -105,6 +97,7 @@ ActiveRecord::Schema.define(version: 20171022042052) do
     t.text "reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,7 +127,6 @@ ActiveRecord::Schema.define(version: 20171022042052) do
   add_foreign_key "comments", "users"
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
-  add_foreign_key "orders", "order_statuses", column: "order_statuses_id"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "ratings", "users"
