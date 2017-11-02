@@ -3,6 +3,6 @@ FactoryGirl.define do
     name { Faker::Name.name }
     price 3000000
     quantity 100
-    association :category, factory: :category
+    category_id 1
   end
 end

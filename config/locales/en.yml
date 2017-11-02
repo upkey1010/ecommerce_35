@@ -30,6 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  success: "Delete process is completed"
+  destroy_fail: "Delete process is not completed!"
   hello_world: "Hello World"
   base_title: "Apple Store - Heaven Place for ifan"
   cant_find_user: "Can not find user !!!"
@@ -310,3 +312,4 @@ en:
       destroy_fail_because_of_sub: "This Category has sub-category, can not be destroyed"
     create:
       add_success: "Category has been added"
+

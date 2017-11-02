@@ -22,9 +22,9 @@ class ProductsController < ApplicationController
 
   def destroy
     if @product.destroy
-      flash[:success] = t ".destroy_success"
+      flash[:success] = t "success"
     else
-      flash[:danger] = t ".destroy_fail"
+      flash[:danger] = t "destroy_fail"
     end
     redirect_to products_manager_path
   end
