@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  hello: "Hello "
   success: "Delete process is completed"
   destroy_fail: "Delete process is not completed!"
   hello_world: "Hello World"
@@ -128,6 +129,7 @@ en:
   create: "Create"
   this_is_super_category: "This is a super category"
   super_cate: "Super Category"
+  back: "Back"
 
   static_pages:
     home:
@@ -313,3 +315,49 @@ en:
     create:
       add_success: "Category has been added"
 
+  devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome "
+        msg_1: "You can confirm your account email through the link below:"
+        confirm: "Confirm my account"
+      email_changed:
+        hello: "Hello"
+        msg_1: "We're contacting you to notify you that your email is being changed to"
+      password_change:
+        msg: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        msg1: "Someone has requested a link to change your password. You can do this through the link below"
+        msg2: "If you didn't request this, please ignore this email"
+        msg3: "Your password won't change until you access the link above and create a new one"
+        change_pw: "Change my password"
+      unlock_instructions:
+        msg1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts"
+        msg2: "Click the link below to unlock your account"
+        unlock: "Unlock my account"
+    passwords:
+      edit:
+        new_pwd: "New password"
+        confirm_new_pwd: "Confirm new password"
+        change_pwd: "Change my password"
+      new:
+        forgot_pwd: "Forgot your password?"
+        reset_pwd: "Send me reset password instructions"
+    registrations:
+      edit:
+        create_account: "Create my account"
+        cancle_account: "Cancel my account"
+      new:
+        create: "Create my account"
+    unlocks:
+      new:
+        resend_unlock_instructions: "Resend unlock instructions"
+    shared:
+      links:
+        registrations: "registrations"
+        forgot_pwd: "Forgot your password?"
+        receiver_confirmation_instructions?: "Didn't receive confirmation instructions?"
+        receiver_unlock_instructions?: "Didn't receive unlock instructions?"

@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users
   resources :products do
     resources :parameters, except: %i(index show)
   end
+  devise_for :users
+  resources :users
   resources :categories
   resources :comments, only: %i(create destroy)
   resources :ratings, only: %i(create destroy)
